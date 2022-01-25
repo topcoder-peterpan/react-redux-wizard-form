@@ -230,6 +230,7 @@ a{
 
 .adaptive-content {
     margin: 0 auto;
+    /* margin-bottom: 2em !important; */
     padding: 0 36px;
 }
 

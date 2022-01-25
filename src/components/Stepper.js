@@ -1,6 +1,7 @@
 import React, { Component } from "react"
 
-const stepTitle = ["Terms", "Personal Info", "Employment Info", "Account Info", "Documentation"]
+// const stepTitle = ["Terms", "Personal Info", "Employment Info", "Account Info", "Documentation"]
+const stepTitle = ["Personal Info", "Employment Info", "Amount & Next Payday Info", "Banks Info", "Submit"]
 
 export default class Stepper extends Component {
     render() {

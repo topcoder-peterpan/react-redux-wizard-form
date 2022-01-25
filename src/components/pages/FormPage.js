@@ -3,8 +3,9 @@ import { connect } from "react-redux"
 
 import FormTnc from "../form/FormTnc"
 import FormPersonalInfo from "../form/FormPersonalInfo"
-import FormEmployment from "../form/FormEmployment"
-import FormAccount from "../form/FormAccount"
+import FormEmploymentInfo from "../form/FormEmploymentInfo"
+import FormAmountNextPaydayInfo from "../form/FormAmountNextPaydayInfo"
+import FormBankInfo from "../form/FormBankInfo"
 import FormDocumentation from "../form/FormDocumentation"
 
 import Stepper from "../Stepper"
@@ -14,10 +15,11 @@ class FormPage extends Component {
 
     renderForm = (step) => {
         switch(step){
-            case 1: return <FormTnc/>
-            case 2: return <FormPersonalInfo/>
-            case 3: return <FormEmployment/>
-            case 4: return <FormAccount/>
+            // case 1: return <FormTnc/>
+            case 1: return <FormPersonalInfo/>
+            case 2: return <FormEmploymentInfo/>
+            case 3: return <FormAmountNextPaydayInfo/>
+            case 4: return <FormBankInfo/>
             case 5: return <FormDocumentation/>
         }
     }

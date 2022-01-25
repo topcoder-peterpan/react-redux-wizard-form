@@ -20,11 +20,11 @@ class MainPage extends Component {
         return (
             <div className="main-page">
                 <div className="title">
-                    React Redux Wizard Form
+                    Your loan is just a few steps away!
                 </div>
                 <div className="btn-wrapper">
-                    <RaisedButton primary={true} label="New Application" className="btn" style={{marginRight:24}} onTouchTap={this.handleNewApplication}/>
-                    <RaisedButton primary={true} label="Continue Your Application" className="btn right" disabled={!this.props.agree} onTouchTap={this.handleContinue}/>
+                    <RaisedButton primary={true} label="Apply Now" className="btn" style={{marginRight:24}} onTouchTap={this.handleNewApplication}/>
+                    <RaisedButton primary={true} label="Go ahead" className="btn right" disabled={!this.props.agree} onTouchTap={this.handleContinue}/>
                 </div>
             </div>
         )

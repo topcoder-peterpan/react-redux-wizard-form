@@ -1,15 +1,22 @@
 import React, { Component } from "react"
-import TextField from "material-ui/TextField"
+import {TextField, DatePicker} from "material-ui"
 import PrevNextPageButton from "../PrevNextPageButton"
 import { connect } from "react-redux"
 
 import { updateForm } from "../../action/FormAction"
+
+// import DateFnsUtils from '@date-io/date-fns';
+// import {
+//     MuiPickersUtilsProvider,
+//     KeyboardDatePicker
+// } from '@material-ui/pickers';
 
 const textFieldStyle = {width:"100%"}
 
 class FormPersonalInfo extends Component {
 
     changeTextField = (stateType, event, newValue) => {
+        console.log(newValue);
         this.props.updateForm(stateType, newValue)
     }
 
@@ -29,14 +36,6 @@ class FormPersonalInfo extends Component {
                     </div>
                     <div>
                         <TextField
-                            floatingLabelText="Middle Name"
-                            onChange={this.changeTextField.bind(this, "middleName")}
-                            value={this.props.middleName}
-                            style={textFieldStyle}
-                        />
-                    </div>
-                    <div>
-                        <TextField
                             floatingLabelText="Last Name"
                             onChange={this.changeTextField.bind(this, "lastName")}
                             value={this.props.lastName}
@@ -45,9 +44,33 @@ class FormPersonalInfo extends Component {
                     </div>
                     <div>
                         <TextField
-                            floatingLabelText="Home Phone"
-                            onChange={this.changeTextField.bind(this, "homePhone")}
-                            value={this.props.homePhone}
+                            floatingLabelText="Address City"
+                            onChange={this.changeTextField.bind(this, "addressCity")}
+                            value={this.props.addressCity}
+                            style={textFieldStyle}
+                        />
+                    </div>
+                    <div>
+                        <TextField
+                            floatingLabelText="State"
+                            onChange={this.changeTextField.bind(this, "state")}
+                            value={this.props.state}
+                            style={textFieldStyle}
+                        />
+                    </div>
+                    <div>
+                        <TextField
+                            floatingLabelText="Zip Code"
+                            onChange={this.changeTextField.bind(this, "zipCode")}
+                            value={this.props.zipCode}
+                            style={textFieldStyle}
+                        />
+                    </div>
+                    <div>
+                        <TextField
+                            floatingLabelText="Email"
+                            onChange={this.changeTextField.bind(this, "email")}
+                            value={this.props.email}
                             style={textFieldStyle}
                         />
                     </div>
@@ -55,38 +78,44 @@ class FormPersonalInfo extends Component {
                 <div className="two-col">
                     <div>
                         <TextField
-                            floatingLabelText="Mobile Phone"
-                            onChange={this.changeTextField.bind(this, "mobilePhone")}
-                            value={this.props.mobilePhone}
+                            floatingLabelText="Home Phone"
+                            onChange={this.changeTextField.bind(this, "homePhone")}
+                            value={this.props.homePhone}
                             style={textFieldStyle}
                         />
                     </div>
                     <div>
                         <TextField
-                            floatingLabelText="Email Address"
-                            onChange={this.changeTextField.bind(this, "email")}
-                            value={this.props.email}
+                            floatingLabelText="Work Phone"
+                            onChange={this.changeTextField.bind(this, "workPhone")}
+                            value={this.props.workPhone}
                             style={textFieldStyle}
                         />
                     </div>
                     <div>
                         <TextField
-                            floatingLabelText="Mailing Address"
-                            onChange={this.changeTextField.bind(this, "mailingAddress")}
-                            value={this.props.mailingAddress}
+                            floatingLabelText="Best Time To Call"
+                            onChange={this.changeTextField.bind(this, "bestTimeToCall")}
+                            value={this.props.bestTimeToCall}
                             style={textFieldStyle}
                         />
                     </div>
                     <div>
                         <TextField
-                            floatingLabelText="Social Security Number"
-                            onChange={this.changeTextField.bind(this, "socialSecurityNumber")}
-                            value={this.props.socialSecurityNumber}
+                            floatingLabelText="SSN"
+                            onChange={this.changeTextField.bind(this, "ssn")}
+                            value={this.props.ssn}
                             style={textFieldStyle}
                         />
                     </div>
+                    <DatePicker 
+                        floatingLabelText="Birth Date"
+                        value={ this.props.birthDate }
+                        onChange={this.changeTextField.bind(this, "birthDate")}
+                        style={textFieldStyle}
+                    />
                 </div>
-                <PrevNextPageButton prev={1} next={3}/>
+                <PrevNextPageButton next={2}/>
             </div>
         )
     }
@@ -94,13 +123,16 @@ class FormPersonalInfo extends Component {
 
 const mapStateToProps = (state) => ({
     firstName: state.FormReducer.firstName,
-    middleName: state.FormReducer.middleName,
     lastName: state.FormReducer.lastName,
-    homePhone: state.FormReducer.homePhone,
-    mobilePhone: state.FormReducer.mobilePhone,
+    addressCity: state.FormReducer.addressCity,
+    state: state.FormReducer.state,
+    zipCode: state.FormReducer.zipCode,
     email: state.FormReducer.email,
-    mailingAddress: state.FormReducer.mailingAddress,
-    socialSecurityNumber: state.FormReducer.socialSecurityNumber,
+    homePhone: state.FormReducer.homePhone,
+    workPhone: state.FormReducer.workPhone,
+    bestTimeToCall: state.FormReducer.bestTimeToCall,
+    ssn: state.FormReducer.ssn,
+    birthDate: state.FormReducer.birthDate,
 })
 
 const mapDispatchToProps = (dispatch) => ({

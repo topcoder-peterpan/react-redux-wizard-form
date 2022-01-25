@@ -10,7 +10,7 @@ class App extends React.Component {
                 <div className="main-app">
                     <header className="main-header">
                         <div className="top-bar adaptive-content">
-                            <Link to="/">SampleApp</Link>
+                            <Link to="/">PAYDAY LOANS</Link>
                         </div>
                     </header>
                     <main className="main-content">
